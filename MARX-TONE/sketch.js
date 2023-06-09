@@ -5,6 +5,8 @@ let playing = true;
 
 let w = 640 * 1.2;
 let h = 640 * 1.2;
+
+// PIXEL RESOLUTION
 let vScale = 12;
 
 let purple = '#7a45ff';
@@ -14,7 +16,7 @@ let darkgrey = '#231F24';
 function setup() {
    createCanvas(w, h);
    pixelDensity(2);
-   // video = createCapture(VIDEO);
+   // LINK VIDEO HERE
    video = createVideo("mint!_comp_Earth.mp4",
    vidLoad);
    video.size(w / vScale, h / vScale);
@@ -31,11 +33,12 @@ function draw(){
          let r = video.pixels[index + 0];
          let g = video.pixels[index + 1];
          let b = video.pixels[index + 2];
-   
-         //  let greyscale = (r  * 0.2126 + g * 0.7152 + b * 0.0722) / 3;
+  
          let greyscale = (r + g + b) / 3
          let brightness = map(greyscale, 0, 255, 0, 1);
-         let brightness2 = map(greyscale, 0, 255, 1, 0);
+         
+         // interchange "inverse" var with "brightness" to change light/dark mode
+         let inverse = map(greyscale, 0, 255, 1, 0);
          let angle = map(brightness, 0, 1, 0, PI);
 
          if ( brightness < 0.2) {

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/p5.capture@1.4.1/dist/p5.capture.umd.min.js"></script>
+
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <meta charset="utf-8" />
+   <title>FLUTTER SYSTEM</title>
+</head>
+
+<body>
+   <main>
+      <div class="filestuff">
+         <div class="file-action">
+            <input type="file" id="file-input" style="display: none;">
+            <label style="margin: 0; line-height: 1;" class="label-heading">Insert image/video</label>
+            <label for="file-input" class="buttonStyle">Upload New</label>
+         </div>
+         <div class="file-info">
+            <div id="file-name-display" class="file-name"></div>
+         </div>
+      </div>
+
+      <label class="label-heading" style="line-height: 3;">Color Palette</label>
+
+      <div class="colorstuff">
+
+         <div class="palette-bg">
+            <label style="margin-right: 47px; margin-bottom: 0; " class="sub-heading">Background</label>
+         </div>
+
+         <div class="palette-symbol">
+            <label style="" class="sub-heading">Pixel</label>
+         </div>
+      </div>
+      <div class="inverse-heading">
+         <label style="margin: 0;" class="label-heading">Mode</label>
+      </div>
+      <div class="inversestuff">
+         <p class="notation">light</p>
+         <div class="symbol_wrapper">
+            <!-- <p>&nbsp</p> -->
+            
+            <p>A</p>
+            <p>B</p>
+            <p>C</p>
+            <p>D</p>
+            <p>E</p>
+            <p>F</p>
+            <p>G</p>
+            <p>H</p>
+         </div>
+         <p class="notation" style="justify-self: end;">dark</p>
+      </div>
+      <label class="label-heading">Canvas Rez</label>
+      <div class="pixelrez">
+         <button class="buttonStyle select" id="vScale32">32</button>
+         <button class="buttonStyle select" id="vScale24">24</button>
+         <button class="buttonStyle select" id="vScale16">16</button>
+      </div>
+      <label class="label-heading">Status</label>
+      <div class="loader-bar">
+         <div class="loader-bar-progress"></div>
+         <p id="status_text" class="notation"></p>
+      </div>
+      <div class="save-buttons"></div>
+      <div class="header">
+         <div class="title">
+            <img id="terrain" src="./Terrain_Logo_Master.svg" alt="Terrain">
+            <p>mint.fun</p>
+            <p>flutter system</p>
+         </div>
+         <div class="help">
+            <button class="buttonStyle helpbtn">how to use?</button>
+            <div class="help-box">
+               <p> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p> 
+            </div>
+         </div>
+      </div>
+   </main>
+   <script src="sketch.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,314 @@
+@font-face {
+   font-family: 'DataFun Reg';
+   src: url('./DataFunV2-Regular.otf');
+}
+@font-face {
+   font-family: 'DataFun Bold';
+   src: url('./DataFunV2-Regular.otf');
+}
+@font-face {
+   font-family: 'Symbol';
+   src: url('./MintFunShapescales-Symbols.otf');
+}
+
+:root {
+   --spacingVertical: 1.7rem;
+   --spacingHorizontal: 2rem;
+   --fontSizeHeading: 0.9rem;
+   --fontSizeSub: 0.9rem;
+   --fontSizeNot: 0.6rem;
+   --darkGrey: #231F24;
+   --lightGrey: #f0f6f7;
+   --purple: #7a45ff;
+   --lineHeight: 2;
+   --borderRad: 5px;
+   --fontReg: 'DataFun Reg';
+   --fontBold: 'DataFun Bold'
+}
+
+html, body {
+   margin: 0;
+   padding: 0;
+   background-color: var(--lightGrey);
+   font-family: var(--fontReg);
+   color: var(--darkGrey);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+ }
+ canvas {
+   display: block;
+   margin-right: var(--spacingHorizontal);
+ }
+ 
+ main {
+   display: flex;
+   flex-direction: column;
+   width: 20vw;
+   margin-top: -4rem;
+   margin: 0 4rem;
+ }
+
+ .filestuff, .colorstuff, .inversestuff, .pixelrez, .loader-bar {
+   margin-bottom: var(--spacingVertical);
+ }
+
+ .label-heading {
+   font-family: var(--fontBold);
+   line-height: var(--lineHeight);
+   font-size: var(--fontSizeSub);
+ }
+
+ .sub-heading {
+   font-size: var(--fontSizeSub);
+   flex: 0 0 100%; 
+   width: 100%;
+   margin-bottom: 0.5rem;
+ }
+
+ .filestuff {
+   display: flex;
+   flex-direction: column;
+   /* margin-bottom: var(--spacingVertical); */
+ }
+
+ .file-action, .file-info {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ .file-info {
+   flex-direction: row-reverse;
+ }
+
+   #previewMedia {
+      max-width: 90px;
+      max-height: 100px;
+      filter: grayscale(1);
+      border: 1px solid #231F24;
+   }
+
+   .buttonStyle {
+      font-family: "DataFun Reg";
+      font-size: var(--fontSizeHeading);
+      color: var(--darkGrey);
+      display: inline-block;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: var(--borderRad);
+      border: 1px solid var(--darkGrey);
+      background: none;
+    }
+
+    /* Custom styling for file name display */
+    .file-name {
+      font-size: 0.8rem;
+    font-weight: bold;
+    color: #231f2481;
+    margin-top: 10px;
+    max-width: 8vw;
+    word-break: break-all;
+    white-space: normal;
+    }
+
+    .colorstuff {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .palette-bg, .palette-symbol {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      width: 20px;
+      height: 20px;
+      border: 1px solid black;
+      margin-top: 0;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border-radius: var(--borderRad);
+      cursor: pointer;
+   }
+   .palette-bg .swatch {
+      margin-bottom: 20px;
+   }
+
+    .inverse-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+   .inversestuff {
+      font-family: 'DataFun Reg';
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      /* grid-template-rows: 1fr 1fr; */
+   }
+
+   .symbol_wrapper {
+      grid-area: 1 / -1 / 1 / 1;
+      display: flex;
+      justify-content: space-between;
+      font-size: 50px;
+     
+   }
+
+   .symbol_wrapper p {
+      margin: 0;
+      font-family: 'Symbol';
+      font-variant-ligatures: common-lig
+   }
+
+   .notation {
+      color: var(--darkGrey);
+      font-family: var(--fontReg);
+      font-size: var(--fontSizeNot);
+      line-height: 1;
+      color: var(--purple);
+      opacity: 0.6;
+   }
+
+   .select {
+      color: var(--darkGrey);
+      font-family: var(--fontReg);
+      font-size: var(--fontSizeSub);
+      padding: 6px;
+      text-decoration: none;
+      border-radius: var(--borderRad);
+      border: 1px solid var(--darkGrey);
+   }
+
+   .select:hover {
+      background-color: var(--purple);
+      color: var(--lightGrey);
+   }
+
+   .selected {
+      background-color: var(--purple);
+      color: var(--lightGrey);
+   }
+
+   .loader-bar {
+      width: 100%;
+      height: 10px;
+      background-color: var(--lightGrey);;
+      border: 1px solid var(--darkGrey);
+      border-radius: 10px;
+      border-radius: 4px;
+   }
+   
+   .loader-bar-progress {
+      width: 0%;
+      height: 100%;
+      background-color: var(--purple);
+      transition: width 1s ease;
+   }
+ 
+.header {
+   position: absolute;
+   top: 10px;
+   width: 95vw;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin: 0 2rem;
+   font-size: var(--fontSizeNot);
+   margin-left: -0.5rem;
+}
+
+.title {
+   display: flex;
+   width: 22vw;
+   justify-content: space-between;
+   align-items: center;
+}
+#terrain {
+    width: 6vw;
+}
+
+.p5c-container {
+   all: unset !important;
+   position: absolute !important;
+   top: 84vh !important;
+   left: 1vw !important;
+   font-family: "DataFun Reg" !important;
+   font-size: var(--fontSizeSub) !important;
+   background: none !important;
+   box-shadow: none !important;
+   padding: 1rem !important;
+   border-radius: 10px !important;
+   display: flex !important;
+   flex-direction: row !important;
+   flex-wrap: wrap !important;
+   justify-content: space-between !important;
+}
+
+.p5c-container::before {
+   content: "Export" !important;
+   font-size: var(--fontSizeHeading) !important;
+   font-family: "DataFun Bold" !important;
+   flex: 0 0 100% !important; 
+   margin-bottom: 1rem !important;
+}
+
+.p5c-format, .p5c-framerate, .p5c-btn { 
+   font-family: "DataFun Reg" !important;
+   box-shadow: none !important;
+   border: 1px solid var(--darkGrey)!important;
+   font-size: var(--fontSizeSub) !important;
+}
+
+.p5c-format, .p5c-framerate {
+   color: var(--darkGrey)!important;
+   background: none!important;
+}
+
+.p5c-btn { 
+   margin-left: 2rem !important;
+   border: 1px solid var(--darkGrey) !important;
+}
+
+.p5c-btn:after {
+   background: #ef375e !important;
+   border: 1px solid var(--darkGrey) !important;
+}
+
+
+.helpbtn {
+   text-decoration: underline;
+   position: relative;
+   color: var(--darkGrey);
+   background-color: var(--lightGrey);
+   font-size: var(--fontSizeNot);
+   border: none;
+}
+
+.helpbtn:hover {
+   text-decoration: underline;
+   color: var(--purple);
+   cursor: pointer;
+}
+
+.help-box {
+   position: absolute;
+   opacity: 0;
+   right: 0;
+   max-width: 50vw;
+   min-width: 30vw;
+   font-size: var(--fontSizeSub);
+   background-color: var(--darkGrey);
+   color: var(--lightGrey);
+   padding: 20px;
+   border-radius: var(--borderRad);
+   margin: 0.3rem;
+   margin-right: 0;
+}
+
+.help-box.open {
+   opacity: 1;
+}
